@@ -8,20 +8,13 @@ export function getClientsWithWrongBalance(array) {
   // Your code goes here...
   let wrongBalanceAccts = [];
   for (let i = 0; i < array.length; i++) {
-    let arrItemDeposits = array[i].deposits;
-    if (arrItemDeposits === undefined) {
-      arrItemDeposits = 0;
-    }
-
+    let arrItemDeposits = array[i].deposits || 0;
     let sumDeposits = 0;
     for (let x = 0; x < arrItemDeposits.length; x++) {
       sumDeposits += arrItemDeposits[x];
     }
 
-    let arrItemWithdrawal = array[i].withdrawals;
-    if (arrItemWithdrawal === undefined) {
-      arrItemWithdrawal = 0;
-    }
+    let arrItemWithdrawal = array[i].withdrawals || 0;
     let sumWithdrawals = 0;
     for (let x = 0; x < arrItemWithdrawal.length; x++) {
       sumWithdrawals += arrItemWithdrawal[x];

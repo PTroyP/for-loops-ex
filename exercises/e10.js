@@ -8,11 +8,15 @@ export function getClientsWithLetterInName(array, letter) {
   let clientNames = [];
 
   for (let i = 0; i < array.length; i++) {
-    if (
-      array[i].name.includes(letter.toLowerCase()) ||
-      array[i].name.includes(letter.toUpperCase())
-    ) {
-      clientNames.push(array[i].name);
+    let letterID = array[i].name;
+    for (let x = 0; x < letterID.length; x++) {
+      if (
+        letterID[x] === letter.toLowerCase() ||
+        letterID[x] === letter.toUpperCase()
+      ) {
+        clientNames.push(letterID);
+        break;
+      }
     }
   }
   return clientNames;

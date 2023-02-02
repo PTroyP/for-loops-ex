@@ -7,11 +7,7 @@ export function getAllAccountsWithSumsOfDepositsLess2000(array) {
   // Your code goes here...
   let lowDeposits = [];
   for (let i = 0; i < array.length; i++) {
-    let arrItemDeposits = array[i].deposits;
-    if (arrItemDeposits === undefined) {
-      arrItemDeposits = 0;
-    }
-
+    let arrItemDeposits = array[i].deposits || 0;
     let sum = 0;
     for (let x = 0; x < arrItemDeposits.length; x++) {
       sum += arrItemDeposits[x];

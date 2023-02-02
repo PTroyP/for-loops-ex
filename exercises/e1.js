@@ -7,10 +7,8 @@ export function getFirstTenNumbers() {
   const array10 = [];
   for (let i = 1; i <= 10; i++) {
     array10.push(i);
-    if (array10.length === 10) {
-      return array10;
-    }
   }
+  return array10;
 }
 
 // === TEST YOURSELF ===
